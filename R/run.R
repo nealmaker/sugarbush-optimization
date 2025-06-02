@@ -32,4 +32,5 @@ opt <- forestmaker::opt_mngmt(dat, params, "maple", models)
 View(opt$trees |> dplyr::select(spp, dbh, cr, height, bal, cutyr))
 # ------------------------------------------------------------------------------
 
-sim <- forestgrower::simulation(opt$trees$cutyr, opt$trees, opt$plots, params, models)
+sim <- forestgrower::simulation(opt$trees$cutyr, opt$trees, opt$plots, 
+                                opt$params, models, maple = T)
